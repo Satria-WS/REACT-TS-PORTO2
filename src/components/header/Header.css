@@ -5,7 +5,7 @@
     left: 0;
     z-index: var(--z-fixed);
     background-color: var(--body-color);
-    background-color: rgb(21, 106, 106);
+    background-color: var(--body-color)
 }
 
 .nav {
@@ -57,7 +57,7 @@
 /* medium */
 @media screen and (max-width: 700px) {
     .header {
-        background-color: rgb(5, 12, 12);
+        background-color: var(--body-color);
         top: initial;
         bottom: 0;
     }

@@ -191,17 +191,44 @@ img {
         /* background-color: red; */
 
     }
+
+    .button {
+        padding: 1rem 1.75rem;
+
+    }
+
+    .button__icon {
+        width: 22px;
+        height: 22px;
+    }
+
 }
 
 /* medium device */
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0 0 var(--header-height) 0;
+    }
+
+    .section {
+        padding: 2rem 0 4rem;
+    }
+
+    .section__subtitle {
+        margin-bottom: (--mb-3);
+    }
+}
 
 @media screen and (max-width: 576px) {}
 
 /* small device */
 
 @media screen and (max-width: 350px) {
+    :root {
+        --big-font-size: 2.25rem
+    }
+
     .container {
         margin-left: var(--mb-1-1);
         margin-right: var(--mb-1-1);
