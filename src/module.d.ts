@@ -17,3 +17,8 @@ declare module "*.pdf" {
   const pdf: string;
   export default pdf;
 }
+
+declare module "*.jpeg" {
+  const jpeg: string;
+  export default jpeg;
+}

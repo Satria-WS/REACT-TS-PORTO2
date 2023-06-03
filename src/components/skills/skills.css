@@ -30,13 +30,13 @@
     display: grid;
     align-items: flex-start;
     row-gap: 1rem;
+
 }
 
-.skill__data {
+/* skill */
+.skills__data {
     display: flex;
     column-gap: 0.5rem;
-
-
 }
 
 .skills .bx-badge-check {
