@@ -19,7 +19,7 @@ const Testimonials = () => {
       <Swiper
         loop={true}
         grabCursor={true}
-        slidesPerView={24}
+        slidesPerView={1}
         spaceBetween={10}
         pagination={{
           clickable: true,
