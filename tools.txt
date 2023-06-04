@@ -2,3 +2,4 @@
 https://boxicons.com/
 https://iconscout.com/
 swiperjs,com
+emailjs
