@@ -18,7 +18,9 @@ const Contact = () => {
       )
       .then(
         (result) => {
+          e.target.reset();
           console.log(result.text);
+          console.log("send succesfull");
         },
         (error) => {
           console.log(error.text);
@@ -99,8 +101,8 @@ const Contact = () => {
               />
             </div>
             <div className="contact__form-div contact__form-area">
-              <label className="contact__form-area contact__form-message">
-                Project
+              <label className="contact__form-area contact__form-tag contact__form-message ">
+                Message
               </label>
               <textarea
                 name="message"
@@ -110,7 +112,7 @@ const Contact = () => {
                 placeholder="Write your project"
               ></textarea>
             </div>
-            <button onClick={sendEmail} className="button button--flex">
+            <button className="button button--flex">
               Send Message
               <svg
                 className="button__icon"

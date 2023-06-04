@@ -99,7 +99,7 @@
 }
 
 .contact__form-area {
-    height: 11rem;
+    height: 10rem;
 }
 
 .contact__form-area textarea {
@@ -107,13 +107,8 @@
 }
 
 .contact__form-message {
-    position: absolute;
-    top: -0.75rem;
-    left: 1.25rem;
-    font-size: var(--smaller-font-size);
-    padding: 0.25rem;
-    background-color: var(--body-color);
-    z-index: 1;
+
+    height: 20px;
 }
 
 /* large device */
