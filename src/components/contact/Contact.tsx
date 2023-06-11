@@ -1,32 +1,34 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { validationData } from "./Contact_RegeX";
 
 import "./contact.css";
 
 const Contact = () => {
   const form: any = useRef();
 
-  const sendEmail = (e: any) => {
+  const sendEmail = async (e: any) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
+    try {
+      const result = await emailjs.sendForm(
         "service_o8aw3wd",
         "template_rmw4f5c",
         form.current,
         "C9K36uwheVoFbeM2A"
-      )
-      .then(
-        (result) => {
-          e.target.reset();
-          console.log(result.text);
-          console.log("send succesfull");
-        },
-        (error) => {
-          console.log(error.text);
-        }
       );
+      e.target.reset();
+      console.log(result.text);
+      console.log("Send successful");
+    } catch (error: any) {
+      console.log(error.text);
+    }
   };
+
+  // check validation
+  // validationData("satria", "GG");
+  console.log(validationData("satria", "GG"));
+
   return (
     <section className="contact section" id="contact">
       <h2 className="section__title">Get in touch</h2>
