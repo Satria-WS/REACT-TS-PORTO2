@@ -4,3 +4,79 @@ https://iconscout.com/
 swiperjs,com
 emailjs
 npm i mdb-react-ui-kit
+
+refrence code :
+
+
+
+==============================================
+function data() {
+  return {
+    age: 4,
+    electronics: "mercedex",
+  };
+}
+
+const result = data();
+const ageValue = result.age;
+const tageValue = result.electronics;
+
+console.log(ageValue); // Output: 4
+console.log(tageValue); // Output: mercedex
+====================================================
+
+const validationData = (name: any, email: any) => {
+  const data = result(name, email);
+  const dataName = data.nameReg;
+  const dataEmail = data.emailReg;
+  console.log(dataName);
+  console.log(dataEmail);
+};
+
+====================================================
+const result = (name: any, email: any) => {
+  const nameReg = /^[a-zA-Z0-9_-]+$/;
+  const emailReg = /^[^\s@]+@[^s\@]+\.[^\s@]+$/;
+
+  console.log(nameReg.test(name));
+  console.log(emailReg.test(email));
+
+
+};
+================================
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_o8aw3wd",
+        "template_rmw4f5c",
+        form.current,
+        "C9K36uwheVoFbeM2A"
+      )
+      .then(
+        (result) => {
+          e.target.reset();
+          console.log(result.text);
+          console.log("send succesfull");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+
+
+
+
+====== good combination background color for white======
+
+white and red
+White and Brown
+White and Black
+White and Orange
+White and Pink
+White and Yellow
+White and Copper
+White and Gold
