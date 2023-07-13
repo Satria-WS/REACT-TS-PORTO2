@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { validationData } from "./Contact_RegeX";
 
@@ -6,6 +6,11 @@ import "./contact.css";
 
 const Contact = () => {
   const form: any = useRef();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
@@ -81,7 +86,7 @@ const Contact = () => {
           <h3 className="contact__title">Get Me your contact</h3>
           <form ref={form} onSubmit={sendEmail} className="contact__form">
             <div className="contact__form-div">
-              <label htmlFor="" className="contact__form-tag">
+              <label htmlFor="name" className="contact__form-tag">
                 Name
               </label>
               <input
