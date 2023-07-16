@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { validationData } from "./Contact_RegeX";
 import Loader from "../loading/Loader";
 import SendSvg from "../loading/SendSvg";
 import Button from "../button/Button";
+import toast, { Toaster } from "react-hot-toast";
 
 import "./contact.css";
 
@@ -15,19 +16,45 @@ const Contact = () => {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isNameValid, isEmailValid] = validationData(name, email);
+  const [spamClickCount, setSpamClickCount] = useState(0);
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
+  const [cooldownTimeout, setCooldownTimeout] = useState(null);
   // const [showLoader, setShowLoader] = useState(false);
-
-  // loading state to disable the input fields and the submit button during the loading process.
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
-
-    const [isNameValid, isEmailValid] = validationData(name, email);
 
     // setShowLoader(true);
     // setTimeout(() => setShowLoader(false), 1000);
 
     if (isNameValid && isEmailValid) {
+      const loadingToastId = toast.loading("Sending...");
+      try {
+        // start loading
+        // loading state to disable the input fields and the submit button during the loading process.
+        setLoading(true);
+
+        // Simulate a 1-second delay before sending the email
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const result = await emailjs.sendForm(
+          "service_o8aw3wd",
+          "template_rmw4f5c",
+          form.current,
+          "C9K36uwheVoFbeM2A"
+        );
+        e.target.reset();
+        console.log(result.text);
+        console.log("Send successful");
+
+        toast.success("Email sent successfully");
+      } catch (error: any) {
+        console.log(error.text);
+      } finally {
+        // stop loading after sending succes or error
+        toast.dismiss(loadingToastId);
+        setLoading(false);
+      }
       console.log("submitted: ", name, email);
     } else {
       setNameError(isNameValid ? "" : "Invalid name");
@@ -36,42 +63,51 @@ const Contact = () => {
 
     // check status name & email
     if (!isNameValid) {
+      toast.error("Your name invalid");
       console.log("name invalid");
       // return, prevent sending if invalid
       return;
     } else if (!isEmailValid) {
+      if (spamClickCount < 3) {
+        setSpamClickCount(spamClickCount + 1);
+        toast.error("email invalid", {
+          duration: 1000,
+        });
+      } else {
+        toast.error("Email input is invalid. Please wait for 3 seconds", {
+          duration: 3000,
+        });
+        setSpamClickCount(0);
+        setButtonDisabled(true);
+
+        const timeout: any = setTimeout(() => {
+          setButtonDisabled(false);
+        }, 3000);
+      }
       console.log("email invalid");
       return;
     }
-
-    try {
-      // start loading
-      setLoading(true);
-
-      // Simulate a 1-second delay before sending the email
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      const result = await emailjs.sendForm(
-        "service_o8aw3wd",
-        "template_rmw4f5c",
-        form.current,
-        "C9K36uwheVoFbeM2A"
-      );
-      e.target.reset();
-      console.log(result.text);
-      console.log("Send successful");
-    } catch (error: any) {
-      console.log(error.text);
-    } finally {
-      // stop loading after sending succes or error
-      setLoading(false);
-    }
   };
+
+  // useEffect(() => {
+  //   let cooldownTimeout: any;
+
+  //   if (!loading) {
+  //     cooldownTimeout = setTimeout(() => {
+  //       setLoading(false);
+  //     }, 3000);
+  //   }
+
+  //   return () => {
+  //     if (cooldownTimeout) {
+  //       clearTimeout(cooldownTimeout);
+  //     }
+  //   };
+  // }, [loading]);
 
   // check validation
   // validationData("satria", "GG");
   // console.log(validationData("satria", "GG"));
-
-  const onSubmit = () => {};
 
   return (
     <section className="contact section" id="contact">
@@ -182,11 +218,12 @@ const Contact = () => {
               text={"Send Message"}
               // onSubmit={sendEmail}
               loading={loading}
-              disabled={loading}
+              disabled={loading || isButtonDisabled}
               Loader={Loader}
               SendSvg={SendSvg}
             />
           </form>
+          <Toaster position="top-right" reverseOrder={loading} />
         </div>
       </div>
     </section>

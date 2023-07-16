@@ -10,7 +10,7 @@ type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({
-  onSubmit,
+  onSubmit = () => {},
   text,
   SendSvg: SendSvgComponent,
   loading = false,
@@ -19,11 +19,17 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const SendSvg = SendSvgComponent || (() => null);
   const Loader = LoaderComponent || (() => null);
+
+  const handleClick = (e: any) => {
+    if (!disabled) {
+      onSubmit(e);
+    }
+  };
   return (
     <button
       className="button button--flex"
       disabled={disabled}
-      onClick={onSubmit}
+      onClick={handleClick}
     >
       {text}
       {loading ? <Loader /> : <SendSvg />}
