@@ -111,6 +111,17 @@
     height: 20px;
 }
 
+/* error css */
+.error {
+    border: 1 px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
 /* large device */
 @media screen and (max-width: 992px) {
     .contact__container {

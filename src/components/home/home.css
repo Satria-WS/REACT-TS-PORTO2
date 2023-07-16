@@ -11,6 +11,7 @@
 }
 
 
+
 .home__social {
   display: grid;
   grid-template-columns: max-content;
@@ -54,9 +55,14 @@
   background-color: var(--text-color);
   left: 0;
   top: 1rem;
+}
 
+.home__description {
+  max-width: 400px;
+  margin-bottom: var(--mb-3);
 
 }
+
 
 .home__img {
   background: url(../../assets/simpson.jpg);
@@ -122,6 +128,7 @@
   color: var(--title-color);
 }
 
+
 /* ============= BREAKPOINTS =========== */
 
 /* large device */
@@ -141,17 +148,17 @@
   .home__subtitle {
     padding-left: 3.75rem;
     margin-bottom: var(--mb-1);
+
   }
 
   .home__subtitle::before {
     width: 42px;
     top: 0.8rem;
+
   }
 
-  .home__description {
-    max-width: initial;
-    margin-bottom: var(-mb-2-5);
-  }
+
+
 
   .home__img {
     width: 250px;

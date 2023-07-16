@@ -56,7 +56,7 @@ const Data = () => {
           ></path>
         </svg>
       </h1>
-      <h3 className="home__subtitle">Developer</h3>
+      <h3 className="home__subtitle">Develosper</h3>
       <p className="home__description">
         Ada banyak variasi tulisan Lorem Ipsum yang tersedia, tapi kebanyakan
         sudah mengalami perubahan bentuk, entah
