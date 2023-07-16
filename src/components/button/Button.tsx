@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
-import Loader from "../loading/Loader";
-import SendSvg from "../loading/SendSvg";
 
 type ButtonProps = {
-  onSubmit: () => void;
+  onSubmit?: (e: React.FormEvent) => void;
   text: string;
+  SendSvg?: React.FC;
+  Loader?: React.FC;
   loading?: boolean;
   disabled?: boolean;
 };
@@ -12,14 +12,23 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
   onSubmit,
   text,
-  loading,
-  disabled,
+  SendSvg: SendSvgComponent,
+  loading = false,
+  Loader: LoaderComponent,
+  disabled = false,
 }) => {
+  const SendSvg = SendSvgComponent || (() => null);
+  const Loader = LoaderComponent || (() => null);
   return (
-    <button className="button button--flex" disabled={loading}>
-      Send Message
-      <SendSvg />
-      <Loader />
+    <button
+      className="button button--flex"
+      disabled={disabled}
+      onClick={onSubmit}
+    >
+      {text}
+      {loading ? <Loader /> : <SendSvg />}
+      {/* {!loading ? <SendSvg /> : <Loader />} */}
+      {/* {!loading ? <Loader /> : <SendSvg />} */}
     </button>
   );
 };

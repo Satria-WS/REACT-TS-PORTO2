@@ -15,6 +15,7 @@ const Contact = () => {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [loading, setLoading] = useState(false);
+  // const [showLoader, setShowLoader] = useState(false);
 
   // loading state to disable the input fields and the submit button during the loading process.
 
@@ -22,6 +23,9 @@ const Contact = () => {
     e.preventDefault();
 
     const [isNameValid, isEmailValid] = validationData(name, email);
+
+    // setShowLoader(true);
+    // setTimeout(() => setShowLoader(false), 1000);
 
     if (isNameValid && isEmailValid) {
       console.log("submitted: ", name, email);
@@ -66,6 +70,8 @@ const Contact = () => {
   // check validation
   // validationData("satria", "GG");
   // console.log(validationData("satria", "GG"));
+
+  const onSubmit = () => {};
 
   return (
     <section className="contact section" id="contact">
@@ -150,9 +156,7 @@ const Contact = () => {
                 disabled={loading}
                 required
               />
-              {emailError && (
-                <span className="error-message">{emailError}</span>
-              )}
+              {emailError && <span className="error-message">{""}</span>}
             </div>
             <div className="contact__form-div contact__form-area">
               <label className="contact__form-area contact__form-tag contact__form-message ">
@@ -169,12 +173,19 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button className="button button--flex" disabled={loading}>
+            {/* <button className="button button--flex" disabled={loading}>
               Send Message
               <SendSvg />
               <Loader />
-            </button>
-            {/* <Button disabled={loading} /> */}
+            </button> */}
+            <Button
+              text={"Send Message"}
+              // onSubmit={sendEmail}
+              loading={loading}
+              disabled={loading}
+              Loader={Loader}
+              SendSvg={SendSvg}
+            />
           </form>
         </div>
       </div>

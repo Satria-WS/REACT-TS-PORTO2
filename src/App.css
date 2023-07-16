@@ -172,6 +172,15 @@ img {
     background-color: var(--title-color-dark);
 }
 
+.button:disabled {
+    background-color: var(--title-color);
+    color: var(--container-color);
+    padding: 1.25rem 2rem;
+    border-radius: 1rem;
+    font-weight: var(--font-medium);
+    cursor: not-allowed;
+}
+
 .button__icon {
     margin-left: var(--mb-0-5);
 }
