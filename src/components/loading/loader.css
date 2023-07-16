@@ -39,6 +39,11 @@
     animation: spin 1.5s linear infinite;
 }
 
+.spinner {
+    background-color: rebeccapurple;
+    width: 1.99rem;
+}
+
 @keyframes spin {
     to {
         transform: rotate(360deg);
