@@ -19,34 +19,30 @@ const Contact = () => {
   const [isNameValid, isEmailValid] = validationData(name, email);
   const [spamClickCount, setSpamClickCount] = useState(0);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
-  const [cooldownTimeout, setCooldownTimeout] = useState(null);
   // const [showLoader, setShowLoader] = useState(false);
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
 
-    // setShowLoader(true);
-    // setTimeout(() => setShowLoader(false), 1000);
-
     if (isNameValid && isEmailValid) {
       const loadingToastId = toast.loading("Sending...");
-      try {
-        // start loading
-        // loading state to disable the input fields and the submit button during the loading process.
-        setLoading(true);
+      setLoading(true);
 
-        // Simulate a 1-second delay before sending the email
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+      try {
+        // await new Promise((resolve) => setTimeout(resolve, 0));
+        // setLoading(true);
+
         const result = await emailjs.sendForm(
           "service_o8aw3wd",
           "template_rmw4f5c",
           form.current,
           "C9K36uwheVoFbeM2A"
         );
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+
         e.target.reset();
         console.log(result.text);
         console.log("Send successful");
-
         toast.success("Email sent successfully");
       } catch (error: any) {
         console.log(error.text);
@@ -63,10 +59,24 @@ const Contact = () => {
 
     // check status name & email
     if (!isNameValid) {
-      toast.error("Your name invalid");
+      if (spamClickCount < 3) {
+        setSpamClickCount(spamClickCount + 1);
+        toast.error("name invalid", {
+          duration: 1000,
+        });
+      } else {
+        toast.error("Name input is invalid. Please wait for 3 seconds", {
+          duration: 3000,
+        });
+        setSpamClickCount(0);
+        setButtonDisabled(true);
+
+        const timeout: any = setTimeout(() => {
+          setButtonDisabled(false);
+        }, 3000);
+      }
       console.log("name invalid");
-      // return, prevent sending if invalid
-      return;
+      return; // return, prevent sending if invalid
     } else if (!isEmailValid) {
       if (spamClickCount < 3) {
         setSpamClickCount(spamClickCount + 1);
@@ -87,23 +97,9 @@ const Contact = () => {
       console.log("email invalid");
       return;
     }
+
+    // if (!isNameValid || !isEmailValid) { }
   };
-
-  // useEffect(() => {
-  //   let cooldownTimeout: any;
-
-  //   if (!loading) {
-  //     cooldownTimeout = setTimeout(() => {
-  //       setLoading(false);
-  //     }, 3000);
-  //   }
-
-  //   return () => {
-  //     if (cooldownTimeout) {
-  //       clearTimeout(cooldownTimeout);
-  //     }
-  //   };
-  // }, [loading]);
 
   // check validation
   // validationData("satria", "GG");
@@ -176,7 +172,7 @@ const Contact = () => {
                 disabled={loading}
                 required
               />
-              {nameError && <span className="error-message">{nameError}</span>}
+              {nameError && <span className="error-message">{""}</span>}
             </div>
             <div className="contact__form-div">
               <label htmlFor="" className="contact__form-tag">

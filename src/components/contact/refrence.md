@@ -207,6 +207,7 @@ const nameReg = /^[a-zA-Z0-9_-]+$/;
 };
 
 return (
+
 <form onSubmit={handleSubmit}>
 <div>
 <label htmlFor="name">Name:</label>
@@ -237,3 +238,89 @@ onChange={(e) => setName(e.target.value)}
 };
 
 export default FormValidationExample
+//////////////////////////////////////////////////////////////////////
+
+const sendEmail = async (e: any) => {
+e.preventDefault();
+
+if (!isNameValid) {
+handleNameError();
+return;
+}
+
+if (!isEmailValid) {
+handleEmailError();
+return;
+}
+
+setLoading(true);
+const loadingToastId = toast.loading("Sending...");
+
+try {
+const result = await emailjs.sendForm(
+"service_o8aw3wd",
+"template_rmw4f5c",
+form.current,
+"C9K36uwheVoFbeM2A"
+);
+
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    e.target.reset();
+    console.log(result.text);
+    console.log("Send successful");
+    toast.success("Email sent successfully");
+
+} catch (error: any) {
+console.log(error.text);
+} finally {
+toast.dismiss(loadingToastId);
+setLoading(false);
+}
+
+console.log("Submitted:", name, email);
+};
+
+const handleNameError = () => {
+if (spamClickCount < 3) {
+setSpamClickCount(spamClickCount + 1);
+toast.error("Name invalid", {
+duration: 1000,
+});
+} else {
+toast.error("Name input is invalid. Please wait for 3 seconds", {
+duration: 3000,
+});
+setSpamClickCount(0);
+setButtonDisabled(true);
+
+    const timeout = setTimeout(() => {
+      setButtonDisabled(false);
+    }, 3000);
+
+}
+
+console.log("Name invalid");
+};
+
+const handleEmailError = () => {
+if (spamClickCount < 3) {
+setSpamClickCount(spamClickCount + 1);
+toast.error("Email invalid", {
+duration: 1000,
+});
+} else {
+toast.error("Email input is invalid. Please wait for 3 seconds", {
+duration: 3000,
+});
+setSpamClickCount(0);
+setButtonDisabled(true);
+
+    const timeout = setTimeout(() => {
+      setButtonDisabled(false);
+    }, 3000);
+
+}
+
+console.log("Email invalid");
+};
