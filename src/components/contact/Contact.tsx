@@ -119,7 +119,9 @@ const Contact = () => {
               <i className="bx bx-mail-send contact__card-icon"></i>
               <h3 className="contact__card-title">Email</h3>
 
-              <span className="contact__card-data">user@gmail.com</span>
+              <span className="contact__card-data">
+                extencezone02@gmail.com
+              </span>
 
               <a
                 href="mailto:examplemail@gmail.com.com"
@@ -132,7 +134,7 @@ const Contact = () => {
             <div className="contact__card">
               <i className="bx bxl-whatsapp contact__card-icon"></i>
               <h3 className="contact__card-title">Whatsapp</h3>
-              <span className="contact__card-data">+ 628 ------</span>
+              <span className="contact__card-data">+ 628 5890005772</span>
 
               <a
                 href="https://api.whatsapp.com/send?phone=085890005772&text=Hello, more information"
@@ -143,8 +145,8 @@ const Contact = () => {
               </a>
             </div>
             <div className="contact__card">
-              <i className="bx bxl-messenger contact__card-icon"></i>
-              <h3 className="contact__card-title">Massenger</h3>
+              <i className="bx bxl-linkedin contact__card-icon"></i>
+              <h3 className="contact__card-title">Linkedin</h3>
               <span className="contact__card-data">user@gmail.com</span>
 
               <a href="https://m.me/crypticalcoder" className="contact__button">
