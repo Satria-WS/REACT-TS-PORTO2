@@ -5,6 +5,8 @@ import Loader from "../loading/Loader";
 import SendSvg from "../loading/SendSvg";
 import Button from "../button/Button";
 import toast, { Toaster } from "react-hot-toast";
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+
 
 import "./contact.css";
 

@@ -1,5 +1,10 @@
 import React from "react";
 import "./footer.css";
+import LanguageIcon from '@mui/icons-material/Language';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
+
 
 const Footer = () => {
   return (
@@ -18,23 +23,24 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="#testimonials" className="footer__link">
-              Testimonials
+            <a href="#certificates" className="footer__link">
+              Certificates
             </a>
           </li>
         </ul>
         <div className="footer__social">
           <a href="" className="footer__social-link" target="_blank">
-            <i className="bx bxl-facebook"></i>
+            <i className="bx"><LinkedInIcon fontSize="medium"/></i>
           </a>
           <a href="" className="footer__social-link" target="_blank">
-            <i className="bx bxl-instagram"></i>
+            <i className="bx">
+            <LanguageIcon/>
+            </i>
           </a>
           <a href="" className="footer__social-link" target="_blank">
-            <i className="uil uil-github-alt"></i>
+            <i className="bx"><GitHubIcon/></i>
           </a>
         </div>
-
         <span className="footer__copy">
           &#169; Warriorcode. All rights reserved
         </span>

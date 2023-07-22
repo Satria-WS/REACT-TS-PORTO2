@@ -18,7 +18,7 @@ const Header: FunctionComponent = () => {
       {/* nav.nav.container */}
       <nav className="nav container">
         <a href="index.html" className="nav__logo">
-          Smith
+          satria
         </a>
 
         <div className={Toggle ? "nav__menu show-menu" : "nav__menu"}>
@@ -61,7 +61,7 @@ const Header: FunctionComponent = () => {
                 Skills
               </a>
             </li>
-            <li className="nav__item">
+            {/* <li className="nav__item">
               <a
                 href="#services"
                 onClick={() => setActiveNav("#services")}
@@ -74,7 +74,7 @@ const Header: FunctionComponent = () => {
                 <i className="uil uil-briefcase-alt nav__icon"></i>
                 Services
               </a>
-            </li>
+            </li> */}
             <li className="nav__item">
               <a
                 href="#portfolio"

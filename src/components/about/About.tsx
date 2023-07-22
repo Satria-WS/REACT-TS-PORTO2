@@ -15,10 +15,27 @@ const About = () => {
         <img className="about__img" src={AboutImg} alt="" />
         <div className="about__data">
           <Info />
-          <p className="about__description">
-            Frontend developer , I create web pages with UI/UX user interface ,
-            I have years of experience and many clients are happy with the
-            porjects carried out
+          <p
+            className="about__description"
+            style={{
+              fontFamily: "Arial, sans-serif",
+              fontSize: "16px",
+              lineHeight: "1.6",
+              letterSpacing: "0.5px",
+              wordSpacing: "2px",
+              textAlign: "justify",
+              textTransform: "none",
+              textDecoration: "none",
+              textIndent: "20px",
+              whiteSpace: "normal",
+            }}
+          >
+            As a dedicated front-end developer with a passion for learning, 
+            I have transitioned into programming full-time With a background in Petroleum Engineering
+             and Always eager to stay up-to-date with the latest industry bring a
+            unique perspective to web development  . I
+            take pride in crafting delightful user experiences . Let's
+            collaborate and create something extraordinary together.
           </p>
           <a download={""} href={CV} className="button button--flex">
             Download CV

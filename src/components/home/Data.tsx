@@ -4,7 +4,7 @@ const Data = () => {
   return (
     <div className="home__data">
       <h1 className="home__title">
-        Tangina
+        Satria
         <svg
           width="36"
           height="36"
@@ -57,9 +57,24 @@ const Data = () => {
         </svg>
       </h1>
       <h3 className="home__subtitle">Develosper</h3>
-      <p className="home__description">
-        Ada banyak variasi tulisan Lorem Ipsum yang tersedia, tapi kebanyakan
-        sudah mengalami perubahan bentuk, entah
+      <p
+        className="home__description"
+        style={{
+          fontFamily: "Arial, sans-serif",
+          fontSize: "16px",
+          lineHeight: "1.6",
+          letterSpacing: "0.5px",
+          wordSpacing: "2px",
+          textAlign: "justify",
+          textTransform: "none",
+          textDecoration: "none",
+          textIndent: "20px",
+          whiteSpace: "normal",
+        }}
+      >
+        Hello, my name is Satria. Basically, I am a Petroleum Engineer, but
+        currently, I am focused on learning front-end and back-end development
+        while looking for job opportunities.
       </p>
 
       <a href="#contact" className="button button--flex">
