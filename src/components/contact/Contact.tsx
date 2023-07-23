@@ -5,8 +5,7 @@ import Loader from "../loading/Loader";
 import SendSvg from "../loading/SendSvg";
 import Button from "../button/Button";
 import toast, { Toaster } from "react-hot-toast";
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
 import "./contact.css";
 
@@ -149,9 +148,12 @@ const Contact = () => {
             <div className="contact__card">
               <i className="bx bxl-linkedin contact__card-icon"></i>
               <h3 className="contact__card-title">Linkedin</h3>
-              <span className="contact__card-data">user@gmail.com</span>
+              <span className="contact__card-data">satria wibowo</span>
 
-              <a href="https://m.me/crypticalcoder" className="contact__button">
+              <a
+                href="https://www.linkedin.com/in/satria-wibowo-subiantoro/"
+                className="contact__button"
+              >
                 write me
                 <i className="bx bx-right-arrow-alt"></i>
               </a>

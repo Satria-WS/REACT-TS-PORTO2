@@ -49,12 +49,12 @@ const Qualification = () => {
           >
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Islamic Junior High School</h3>
+                <h3 className="qualification__title">Islamic School</h3>
                 <span className="qualification__subtitle">
-                2006 - 2008
+                  Junior High School
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calender-alt"></i> 
+                  <i className="uil uil-calender-alt">2006 - 2008</i>
                 </div>
               </div>
               <div>
@@ -71,12 +71,12 @@ const Qualification = () => {
               </div>
 
               <div>
-                <h3 className="qualification__title">Islamic High School</h3>
+                <h3 className="qualification__title">Islamic School</h3>
                 <span className="qualification__subtitle">
-                2008 - 2011
+                  Senior High School
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calender-alt"></i> 
+                  <i className="uil uil-calender-alt">2008 - 2011</i>
                 </div>
               </div>
             </div>
@@ -84,10 +84,10 @@ const Qualification = () => {
               <div>
                 <h3 className="qualification__title">Trisakti University</h3>
                 <span className="qualification__subtitle">
-                2011 - 2018
+                  Petroleum Engineering
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calender-alt"></i> 
+                  <i className="uil uil-calender-alt">2011 - 2018</i>
                 </div>
               </div>
               <div>
@@ -105,11 +105,9 @@ const Qualification = () => {
 
               <div>
                 <h3 className="qualification__title">Online Course</h3>
-                <span className="qualification__subtitle">
-                2020 - now
-                </span>
+                <span className="qualification__subtitle">Udemy, etc.</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calender-alt"></i> 
+                  <i className="uil uil-calender-alt">2021 - Present</i>
                 </div>
               </div>
             </div>
@@ -121,14 +119,13 @@ const Qualification = () => {
                 : "qualification__content"
             }
           >
+            {/* left */}
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Product Designer</h3>
-                <span className="qualification__subtitle">
-                  Microsoft - Spain
-                </span>
+                <h3 className="qualification__title">PT Pertamina Retail</h3>
+                <span className="qualification__subtitle">IT Support</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calender-alt"></i> 2021 - Present
+                  <i className="uil uil-calender-alt"></i> 2014
                 </div>
               </div>
               <div>
@@ -136,6 +133,7 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
             </div>
+            {/* right */}
             <div className="qualification__data">
               <div></div>
 
@@ -145,21 +143,53 @@ const Qualification = () => {
               </div>
 
               <div>
-                <h3 className="qualification__title">UX Designer</h3>
+                <h3 className="qualification__title">PT Petro China</h3>
                 <span className="qualification__subtitle">
-                  Apple Inc - Spain
+                  Student - Internship
                 </span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calender-alt"></i> 2020 - 2021
+                  <i className="uil uil-calender-alt"></i> 2015
                 </div>
               </div>
             </div>
+            {/* left */}
             <div className="qualification__data">
               <div>
-                <h3 className="qualification__title">Web Designer</h3>
-                <span className="qualification__subtitle">Figma - Spain</span>
+                <h3 className="qualification__title">PT Aimtopindo</h3>
+                <span className="qualification__subtitle">Engineer</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calender-alt"></i> 2018 - 2020
+                  <i className="uil uil-calender-alt"></i> 2020
+                </div>
+              </div>
+              <div>
+                <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
+              </div>
+            </div>
+            {/* right */}
+            <div className="qualification__data">
+              <div></div>
+
+              <div>
+                <span className="qualification__rounder"></span>
+                <span className="qualification__line"></span>
+              </div>
+
+              <div>
+                <h3 className="qualification__title">PT Caramel Agency</h3>
+                <span className="qualification__subtitle">Staff - Admin</span>
+                <div className="qualification__calender">
+                  <i className="uil uil-calender-alt"></i> 2021
+                </div>
+              </div>
+            </div>
+            {/* left */}
+            <div className="qualification__data">
+              <div>
+                <h3 className="qualification__title">PT IFCA Indonesia</h3>
+                <span className="qualification__subtitle">Developer - Web</span>
+                <div className="qualification__calender">
+                  <i className="uil uil-calender-alt"></i> 2022 - 2023
                 </div>
               </div>
               <div>

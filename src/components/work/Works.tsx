@@ -11,6 +11,7 @@ type Project = {
   image: string;
   title: string;
   category: string;
+  link: string;
 };
 
 const Works = () => {

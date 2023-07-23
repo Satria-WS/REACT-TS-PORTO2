@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import "./scrollup.css";
 
@@ -34,7 +35,9 @@ const Scrollup = () => {
   // "scrollup"
   return (
     <a href="#" className={`scrollup ${showScroll ? "show-scroll" : ""}`}>
-      <i onClick={scrollToTop} className="uil uil-arrow-up scrollup__icon"></i>
+      <i onClick={scrollToTop} className="uil scrollup__icon">
+        <ArrowUpwardIcon fontSize="small" />
+      </i>
     </a>
   );
 };
