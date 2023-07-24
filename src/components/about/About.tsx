@@ -2,7 +2,7 @@ import React from "react";
 import "./about.css";
 import AboutImg from "../../assets/unknown.jpg";
 // import AboutImg from "../../assets/about.jpg";
-import CV from "../../assets/cv.pdf";
+import CV from "../../assets/cv.me-web.pdf";
 import Info from "./info";
 
 const About = () => {
@@ -37,7 +37,7 @@ const About = () => {
             take pride in crafting delightful user experiences . Let's
             collaborate and create something extraordinary together.
           </p>
-          <a download={""} href={CV} className="button button--flex">
+          <a download={"Cv-satria"} href={CV} className="button button--flex">
             Download CV
             <svg
               className="button__icon"

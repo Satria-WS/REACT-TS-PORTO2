@@ -27,7 +27,7 @@ const projectsData = [
     image: Property_X,
     title: "Property-X",
     category: "Angular",
-    link: "https://propertyx-dev.ifca.io/login",
+    link: "https://agency-indo-dev.ifca.io/authentication/login",
   },
   // {
   //   id: 4,
