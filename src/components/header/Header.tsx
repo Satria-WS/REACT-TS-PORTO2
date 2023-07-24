@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import "./Header.css";
+import AppsIcon from '@mui/icons-material/Apps';
 
 const Header: FunctionComponent = () => {
   // =============change background header ============
@@ -126,7 +127,7 @@ const Header: FunctionComponent = () => {
           ></i>
         </div>
         <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
-          <i className="uil uil-apps"></i>
+          <i className="uil"> <AppsIcon/></i>
         </div>
       </nav>
     </header>
