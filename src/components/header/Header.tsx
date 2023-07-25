@@ -1,6 +1,13 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import "./Header.css";
-import AppsIcon from '@mui/icons-material/Apps';
+import AppsIcon from "@mui/icons-material/Apps";
+
+import CottageIcon from "@mui/icons-material/Cottage";
+import PersonIcon from "@mui/icons-material/Person";
+import ArticleIcon from "@mui/icons-material/Article";
+import ImageIcon from "@mui/icons-material/Image";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Header: FunctionComponent = () => {
   // =============change background header ============
@@ -32,7 +39,9 @@ const Header: FunctionComponent = () => {
                   activeNav === "#home" ? "nav__link active-link" : "nav__link"
                 }
               >
-                <i className="uil uil-estate nav__icon"></i>
+                <i className="uil nav__icon ">
+                  <CottageIcon fontSize="small" />
+                </i>
                 Home
               </a>
             </li>
@@ -44,7 +53,9 @@ const Header: FunctionComponent = () => {
                   activeNav === "#about" ? "nav__link active-link" : "nav__link"
                 }
               >
-                <i className="uil uil-user nav__icon"></i>
+                <i className="uil nav__icon">
+                  <PersonIcon fontSize="small" />
+                </i>
                 About
               </a>
             </li>
@@ -58,7 +69,9 @@ const Header: FunctionComponent = () => {
                     : "nav__link"
                 }
               >
-                <i className="uil uil-file-alt nav__icon"></i>
+                <i className="uil nav__icon">
+                  <ArticleIcon fontSize="small" />
+                </i>
                 Skills
               </a>
             </li>
@@ -72,7 +85,10 @@ const Header: FunctionComponent = () => {
                     : "nav__link"
                 }
               >
-                <i className="uil uil-file-alt nav__icon"></i>
+                <i className="uil nav__icon">
+                  {" "}
+                  <ArticleIcon fontSize="small" />
+                </i>
                 Qualification
               </a>
             </li>
@@ -87,7 +103,10 @@ const Header: FunctionComponent = () => {
                     : "nav__link"
                 }
               >
-                <i className="uil uil-scenery nav__icon"></i>
+                <i className="uil  nav__icon">
+                  {" "}
+                  <ImageIcon fontSize="small" />
+                </i>
                 Project
               </a>
             </li>
@@ -101,7 +120,10 @@ const Header: FunctionComponent = () => {
                     : "nav__link"
                 }
               >
-                <i className="uil uil-briefcase-alt nav__icon"></i>
+                <i className="uil nav__icon">
+                  {" "}
+                  <ImageIcon fontSize="small" />
+                </i>
                 Certificates
               </a>
             </li>
@@ -116,18 +138,22 @@ const Header: FunctionComponent = () => {
                     : "nav__link"
                 }
               >
-                <i className="uil uil-message nav__icon"></i>
+                <i className="uil nav__icon">
+                  {" "}
+                  <ContactMailIcon fontSize="small" />
+                </i>
                 Contact
               </a>
             </li>
           </ul>
-          <i
-            className="uil uil-times nav__close"
-            onClick={() => showMenu(!Toggle)}
-          ></i>
+          <i className="uil nav__close" onClick={() => showMenu(!Toggle)}>
+            <CloseIcon fontSize="small" />
+          </i>
         </div>
         <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
-          <i className="uil"> <AppsIcon/></i>
+          <i className="uil">
+            <AppsIcon />
+          </i>
         </div>
       </nav>
     </header>
