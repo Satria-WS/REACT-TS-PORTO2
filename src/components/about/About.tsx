@@ -1,8 +1,9 @@
 import React from "react";
 import "./about.css";
+import codingGif from "../../assets/gif/coding.gif";
 import AboutImg from "../../assets/unknown.jpg";
-// import AboutImg from "../../assets/about.jpg";
-import CV from "../../assets/cv.me-web.pdf";
+
+import CV from "../../assets/satria.pdf";
 import Info from "./info";
 
 const About = () => {
@@ -12,7 +13,8 @@ const About = () => {
       <h2 className="section__title">About Me</h2>
       <span className="section__subtitle">My introduction</span>
       <div className="about__container container grid">
-        <img className="about__img" src={AboutImg} alt="" />
+        <img className="about__img" src={codingGif} alt="" />
+
         <div className="about__data">
           <Info />
           <p
@@ -30,10 +32,10 @@ const About = () => {
               whiteSpace: "normal",
             }}
           >
-            As a dedicated front-end developer with a passion for learning, 
-            I have transitioned into programming full-time With a background in Petroleum Engineering
-             and Always eager to stay up-to-date with the latest industry bring a
-            unique perspective to web development  . I
+            As a dedicated front-end developer with a passion for learning, I
+            have transitioned into programming full-time With a background in
+            Petroleum Engineering and Always eager to stay up-to-date with the
+            latest industry bring a unique perspective to web development . I
             take pride in crafting delightful user experiences . Let's
             collaborate and create something extraordinary together.
           </p>

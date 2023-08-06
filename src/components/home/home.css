@@ -65,13 +65,17 @@
 
 
 .home__img {
-  /* background: url(../../assets/me.jpg); */
-  background: url(../../assets/me-kaos.jpg);
+
+  /* background: url(../../assets/gif/moody.gif); */
+  /* background: url(../../assets/gif/hacker.gif); */
+  background: url(../../assets/gif/face-scan.gif);
+
+
 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow: inset 0 0 0 9px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 9px rgba(54, 197, 207, 0.3);
   order: 1;
   justify-self: center;
   width: 250px;

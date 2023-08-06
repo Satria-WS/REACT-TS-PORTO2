@@ -12,7 +12,8 @@ const Footer = () => {
   const handleRedirect = () => {
     if (
       !isLinkedInAvailable ||
-      window.location.href !== "https://translated.turbopages.org/proxy_u/en-id.en.4619a25a-64be1993-34918079-74722d776562/https/id.linkedin.com/in/satria-wibowo-subiantoro"
+      window.location.href !==
+        "https://translated.turbopages.org/proxy_u/en-id.en.4619a25a-64be1993-34918079-74722d776562/https/id.linkedin.com/in/satria-wibowo-subiantoro"
     ) {
       window.location.href = "https://www.google.com";
     }
@@ -40,10 +41,9 @@ const Footer = () => {
         </ul>
         <div className="footer__social">
           <a
-            href="https://translated.turbopages.org/proxy_u/en-id.en.4619a25a-64be1993-34918079-74722d776562/https/id.linkedin.com/in/satria-wibowo-subiantoro"
+            href="https://www.linkedin.com/in/satria-wibowo-subiantoro/"
             className="footer__social-link"
             target="_blank"
-      
           >
             <i className="bx">
               <LinkedInIcon fontSize="medium" />

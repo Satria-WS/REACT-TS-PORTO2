@@ -10,7 +10,7 @@ import Hacktiv from "../../assets/hacktiv.png";
 export const Data = [
   {
     id: 1,
-    image: Udemy,
+    image: Freecodecamp,
     title: "Udemy",
     description: "The Complete 2023 Web Development Bootcamp",
     style: { width: "150px", height: "150px" },
@@ -24,7 +24,7 @@ export const Data = [
   },
   {
     id: 3,
-    image: Freecodecamp,
+    image: Udemy,
     title: "freeCodeCamp",
     description: "Front end development",
     style: { width: "150px", height: "150px" },
@@ -36,5 +36,4 @@ export const Data = [
   //   description: "Full Stack JavaScript",
   //   style: { width: "150px", height: "150px" },
   // },
-  
 ];
